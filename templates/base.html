@@ -56,70 +56,47 @@
                             <ul class="nav navbar-nav navbar-right">
                               {% if user.is_authenticated %}
                                 <li>
-                                    <a href="#">Home</a>
-                                    <ul class="drop-down">
-                                        <li><a href="" title="Home Layout 01">Home 01</a></li>
-                                        <li><a href="" title="Home Layout 02">Home 02</a></li>
-                                    </ul>
+                                    <a href="{% url 'home' %}">Home</a>
                                 </li>
 
 
-                                <li><a href="about-us.html" title="About Us">About Us</a></li>
+                                <  <li><a href="about-us.html" title="About Us">Donate</a></li>
 
-                                <li>
-                                    <a href="#">Campaign</a>
-                                    <ul class="drop-down">
-                                        <li><a href="">All Campaigns</a></li>
-                                        <li><a href="">Single Campaign</a></li>
-                                    </ul>
-                                </li>
+                                  <li><a href="about-us.html" title="About Us">Request</a></li>
 
-                                <li class="drop"><a href="#">Pages</a>
-                                    <ul class="drop-down">
+                                  <li>
+                                      <a href="{% url 'faqs' %}">FAQs</a>
+                                  </li>
 
-                                        <li class="drop"><a href="#">Elements</a>
-                                            <ul class="drop-down level3">
-                                                <li><a href="">CTA/PROMO BOX</a></li>
-                                                <li><a href="">Fun Facts</a></li>
-                                                <li><a href="">Logos/Clients</a></li>
-                                                <li><a href="">Process</a></li>
-                                                <li><a href="">Highlights Box</a></li>
-                                                <li><a href="">Services</a></li>
-                                                <li><a href="">Subscribe</a></li>
-                                                <li><a href="">Team</a></li>
-                                                <li><a href="">Testimonials</a></li>
-                                            </ul>
-                                        </li>
+                                  <li class="drop">
+                                    <a href="{% url 'contact_page' %}">Contact</a>
+                                  </li>
 
-                                        <li class="drop"><a href="#">Gallery</a>
-                                            <ul class="drop-down level3">
-                                                <li><a href="">Layout 01</a></li>
-                                                <li><a href="">Layout 02</a></li>
-
-                                            </ul>
-                                        </li>
-                                         <li><a href="" title="FAQ">FAQ</a></li>
-                                        <li><a href="" title="404 Page">404 Page</a></li>
-                                        <li class="drop"><a href="#">Level 3</a>
-                                            <ul class="drop-down level3">
-                                                <li><a href="#">Level 3.1</a></li>
-                                                <li><a href="#">Level 3.2</a></li>
-                                                <li><a href="#">Level 3.3</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-
-                                <li>
-                                    <a href="#">Blog</a>
-                                    <ul class="drop-down">
-                                        <li><a href="">All Posts</a></li>
-                                        <li><a href="">Single Page</a></li>
-                                    </ul>
-                                </li>
-
-                                <li><a href="">Contact</a></li>
                                 <li><a href="{% url 'accounts:logout' %}" class="btn btn-simple">Log out</a></li>
+                                {% else %}
+                                <li>
+                                    <a href="{% url 'home' %}">Home</a>
+                                </li>
+
+
+                                <li><a href="about-us.html" title="About Us">Donate</a></li>
+
+                                <li><a href="about-us.html" title="About Us">Request</a></li>
+
+                                <li>
+                                    <a href="{% url 'faqs' %}">FAQs</a>
+                                </li>
+
+                                <li class="drop">
+                                  <a href="{% url 'contact_page' %}">Contact</a>
+                                </li>
+
+                                <li>
+                                    <a href="{% url 'accounts:signup' %}">Sign Up</a>
+                                </li>
+
+                                <li><a href="{% url 'accounts:login' %}">Log In</a></li>
+
                             </ul> {% endif %}
                         </div>
                     </div>

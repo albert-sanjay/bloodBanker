@@ -7,7 +7,8 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.6">
-    <title>Sign Up</title>
+    <title>bloodBanker | Sign Up</title>
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" />
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/floating-labels/">
 
@@ -87,7 +88,7 @@
 
   <div class="checkbox mb-3">
     <label>
-      <p>Have an account already? <a href="#">Log In</a></p>
+      <p>Have an account already? <a href="{% url 'accounts:login' %}">Log In</a></p>
     </label>
   </div>
   <button class="btn btn-lg btn-danger btn-block" type="submit">Sign up</button>
