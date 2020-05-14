@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+{% load static %}
+{% load crispy_forms_tags %}
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.6">
+    <title>bloodBanker Admin | Log In</title>
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" />
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/floating-labels/">
+
+    <!-- Bootstrap core CSS -->
+<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      .form-signin {
+      	width: 100%;
+      	max-width: 420px;
+      	padding: 15px;
+      	margin: auto;
+      }
+
+      .form-label-group > input, .form-label-group > label {
+      	height: 3.125rem;
+      	padding: .75rem;
+      }
+
+
+
+
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+  </head>
+  <body>
+    <form class="form-signin" method="POST">
+      {% csrf_token %}
+      <div class="text-center mb-4">
+        <h1><span style="color:#ef3d32;"><img src="{% static 'images/favicon.png' %}" alt="" style="width:35px;height:37px;">bank</span>Admin </h1>
+        <h1 class="h3 mb-3 font-weight-normal">Log In</h1>
+      </div>
+
+  <div class="form-label-group">
+    {{ form|crispy }}
+  </div>
+
+
+
+
+
+  <div class="checkbox mb-3">
+    <label>
+      <p>Don't have an account? <a href="{% url 'accounts:signup' %}">Sign Up</a></p>
+    </label>
+  </div>
+  <button class="btn btn-lg btn-danger btn-block" type="submit">Log in</button>
+  <p class="mt-5 mb-3 text-muted text-center">© 2019-2020</p>
+</form>
+
+</body></html>
