@@ -24,6 +24,7 @@ urlpatterns = [
     path('faqs/', views.FaqsPage.as_view(), name='faqs'),
     path('accounts/', include("accounts.urls", namespace='accounts')),
     path('site_admin/', include("site_admin.urls", namespace='site_admin')),
+    path('bloodbank/', include('bloodbank.urls', namespace='bloodbank')),
 
 
 ]
