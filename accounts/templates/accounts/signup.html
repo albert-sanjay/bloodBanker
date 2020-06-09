@@ -86,12 +86,12 @@
     {{ form.password2|as_crispy_field }}
   </div>
 
+  <button class="btn btn-lg btn-danger btn-block" type="submit">Sign up</button>
   <div class="checkbox mb-3">
     <label>
       <p>Have an account already? <a href="{% url 'accounts:login' %}">Log In</a></p>
     </label>
   </div>
-  <button class="btn btn-lg btn-danger btn-block" type="submit">Sign up</button>
   <p class="mt-5 mb-3 text-muted text-center">© 2019-2020</p>
 </form>
 

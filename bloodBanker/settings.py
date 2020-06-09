@@ -13,7 +13,11 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 import os
 
 # from django.core.wsgi import get_wsgi_application
-
+# os.environ.setdefault("DJANGO_SETTINGS_MODULE", "bloodBanker.settings")
+# from django.core.wsgi import get_wsgi_application
+# application = get_wsgi_application()
+#
+# os.environ["DJANGO_ALLOW_ASYNC_UNSAFE"] = "true"
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATE_DIR = os.path.join(BASE_DIR,'templates')
@@ -34,17 +38,19 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'phone_field',
-    'bloodbank',
-    'site_admin',
-    'accounts',
-    'crispy_forms',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'accounts',
+    'crispy_forms',
+    'phone_field',
+    'bloodbank',
+    'site_admin',
+
 ]
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 

@@ -1,7 +1,9 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView, View
+from django.views.generic import TemplateView, View, DetailView, ListView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.http import HttpResponse, HttpResponseRedirect
+from django.apps import apps
+Donor = apps.get_model('bloodbank', 'Donor')
 
 # Create your views here.
 class TestUserIsSuperuser(UserPassesTestMixin):
@@ -28,3 +30,10 @@ class AdminLoginView(View):
             return HttpResponse('Not superuser')
 
         return render(request, 'site_admin/login.html')
+
+
+
+class DonorListView(ListView):
+    context_object_name = 'donor'
+    model = Donor
+    template_name = 'site_admin/donor_detail.html'

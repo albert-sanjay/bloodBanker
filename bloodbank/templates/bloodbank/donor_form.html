@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block body_content %}
+<style media="screen">
+.bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+.form-signin {
+      width: 100%;
+      max-width: 420px;
+      padding: 15px;
+      margin: auto;
+    }
+
+.form-label-group > input, .form-label-group > label {
+      height: 3.125rem;
+      padding: .75rem;
+
+
+    }
+
+  @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+
+</style>
+{% for d in donor  %}
+  {% if d.name == user.first_name %}
+        
+  {% endif %}
+
+
+
+{% endfor %}
+
+
+
+
+
+
+<form class="form-signin" method="POST">
+      {% csrf_token %}
+      <div class="text-center mb-4">
+        <h1 class="h3 mb-3 font-weight-normal"><b style="font-weight: bold;">Donor Registeration</b></h1>
+      </div>
+
+  <div class="form-label-group" style="font-weight: bold; ">
+    {{ form|crispy  }}
+  </div>
+
+   <button class="btn btn-lg btn-danger btn-block" type="submit">Register</button>
+
+  <p class="mt-5 mb-3 text-muted text-center">© 2019-2020</p>
+</form>
+
+{% endblock %}

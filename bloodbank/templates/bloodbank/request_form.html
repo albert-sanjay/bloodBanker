@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block body_content %}
+<style media="screen">
+.form-signin {
+      width: 100%;
+      max-width: 420px;
+      padding: 15px;
+      margin: auto;
+    }
+
+</style>
+
+  <div class="container">
+
+    <form class="form-signin" method="POST">
+          {% csrf_token %}
+          <div class="text-center mb-4">
+            <h1 class="h3 mb-3 font-weight-normal"><b style="font-weight: bold;">Request</b></h1>
+          </div>
+
+      <div class="form-label-group" style="font-weight: bold; ">
+        {{ form|crispy  }}
+      </div>
+
+       <button class="btn btn-lg btn-danger btn-block" type="submit">Request</button>
+
+      <p class="mt-5 mb-3 text-muted text-center">© 2019-2020</p>
+    </form>
+
+  </div>
+{% endblock %}
