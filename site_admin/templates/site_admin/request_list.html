@@ -21,45 +21,51 @@
                         Name
                       </th>
                       <th>
-                        Age
-                      </th>
-                      <th>
                         Blood Type
                       </th>
                       <th>
-                        Email
+                        Request Date
                       </th>
                       <th>
                         Address
                       </th>
                       <th>
+                        Email
+                      </th>
+                      <th>
                         Phone
+                      </th>
+                      <th>
+                        Action
                       </th>
 
                     </thead>
                     <tbody>
-                      {% for d  in donor  %}
+                      {% for r  in request  %}
                       <tr>
                         <td>
-                          {{ d.id }}
+                          {{ r.id }}
                         </td>
                         <td>
-                          {{ d.name }}
+                          {{ r.user.first_name }} {{ r.user.last_name}}
                         </td>
                         <td>
-                          {{ d.age }}
+                          {{ r.blood_type }}
                         </td>
                         <td>
-                          {{ d.blood_type }}
+                          {{ r.request_date }}
+                        </td>
+                        <td>
+                          {{r.user.donor.address}}
                         </td>
                         <td class="text-primary">
-                          {{d.email}}
+                          {{ r.user.email}}
                         </td>
                         <td>
-                          {{ d.address }}
+                          {{ r.user.donor.phone }}
                         </td>
                         <td>
-                          {{ d.phone }}
+                          <p> <a href="#">Approve</a> &nbsp; <a href="#" style="color: red;">Disapprove</a> </p>
                         </td>
                       </tr>
                       {% endfor %}

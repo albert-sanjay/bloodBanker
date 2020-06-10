@@ -22,7 +22,7 @@ class Hospital(models.Model):
     name = models.CharField(max_length=256)
     address = models.CharField(max_length=256)
     email = models.EmailField(max_length=254)
-    phone = PhoneField(help_text='Contact Number')
+    phone = models.CharField(max_length=10)
 
     def __str__(self):
         return self.name
@@ -67,7 +67,7 @@ class Donor(models.Model):
     age = models.PositiveIntegerField()
     address = models.CharField(max_length=256)
     email = models.EmailField(max_length=254)
-    phone = PhoneField()
+    phone = models.CharField(max_length=10)
     blood_type = models.CharField(max_length=10, choices=BLOOD_TYPES)
     type_rh = models.CharField(max_length=20)
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, default=None)

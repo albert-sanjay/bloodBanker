@@ -4,6 +4,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.http import HttpResponse, HttpResponseRedirect
 from django.apps import apps
 Donor = apps.get_model('bloodbank', 'Donor')
+Inventory = apps.get_model('bloodbank', 'Inventory')
+Request = apps.get_model('bloodbank', 'Request')
 
 # Create your views here.
 class TestUserIsSuperuser(UserPassesTestMixin):
@@ -37,3 +39,15 @@ class DonorListView(ListView):
     context_object_name = 'donor'
     model = Donor
     template_name = 'site_admin/donor_detail.html'
+
+
+class InventoryListView(ListView):
+    context_object_name = 'inventory'
+    model = Inventory
+    template_name = 'site_admin/inventory_list.html'
+
+
+class RequestListView(ListView):
+    context_object_name = 'request'
+    model = Request
+    template_name = 'site_admin/request_list.html'

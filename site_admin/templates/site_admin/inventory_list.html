@@ -7,59 +7,59 @@
           <div class="col-md-12">
             <div class="card">
               <div class="card-header card-header-primary">
-                <h4 class="card-title ">Donor Information Page</h4>
-                <p class="card-category"> List Of All Donor</p>
+                <h4 class="card-title ">Blood Bank Stock</h4>
+                <p class="card-category">Details of blood In Blood Bank</p>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
                   <table class="table">
                     <thead class=" text-primary">
                       <th>
-                        ID
-                      </th>
-                      <th>
-                        Name
-                      </th>
-                      <th>
-                        Age
+                        Blood Bad ID
                       </th>
                       <th>
                         Blood Type
                       </th>
                       <th>
-                        Email
+                        RH Type
                       </th>
                       <th>
-                        Address
+                        Blood Volume
                       </th>
                       <th>
-                        Phone
+                        Receive Date
+                      </th>
+                      <th>
+                        Expire Date
+                      </th>
+                      <th>
+                        Blood Status
                       </th>
 
                     </thead>
                     <tbody>
-                      {% for d  in donor  %}
+                      {% for i  in inventory  %}
                       <tr>
                         <td>
-                          {{ d.id }}
+                          {{ i.blood_bag_id }}
                         </td>
                         <td>
-                          {{ d.name }}
+                          {{ i.blood_type }}
                         </td>
                         <td>
-                          {{ d.age }}
+                          {{ i.type_rh }}
                         </td>
                         <td>
-                          {{ d.blood_type }}
+                          {{ i.blood_volume}}
+                        </td>
+                        <td >
+                          {{ i.recieve_date }}
+                        </td>
+                        <td>
+                          {{ i.expire_date }}
                         </td>
                         <td class="text-primary">
-                          {{d.email}}
-                        </td>
-                        <td>
-                          {{ d.address }}
-                        </td>
-                        <td>
-                          {{ d.phone }}
+                          {{ i.blood_status }}
                         </td>
                       </tr>
                       {% endfor %}

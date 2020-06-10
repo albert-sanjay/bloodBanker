@@ -10,6 +10,7 @@
   <title>
     Site Admin
   </title>
+  <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" />
   <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
@@ -29,7 +30,7 @@
         Tip 2: you can also add an image using data-image tag
     -->
       <div class="logo"><a href="#" class="simple-text logo-normal">
-          Creative Tim
+          bloodBank Admin
         </a></div>
       <div class="sidebar-wrapper">
         <ul class="nav">
@@ -39,10 +40,10 @@
               <p>Dashboard</p>
             </a>
           </li>
-          <li class="nav-item active ">
+          <li class="nav-item  ">
             <a class="nav-link" href="{% url 'site_admin:donor_detail' %}">
               <i class="material-icons">person</i>
-              <p>Donor Profile</p>
+              <p>Donors</p>
             </a>
           </li>
           <li class="nav-item ">
@@ -51,22 +52,22 @@
               <p>Donation Request</p>
             </a>
           </li>
-          <li class="nav-item ">
+          <li class="nav-item active ">
             <a class="nav-link" href="">
               <i class="material-icons">library_books</i>
               <p>Blood Request</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="">
-              <i class="material-icons">bubble_chart</i>
-              <p>Donor Profile</p>
+            <a class="nav-link" href="{% url 'site_admin:inventory' %}">
+              <i class="material-icons">assignment</i>
+              <p>Blood Stock</p>
             </a>
           </li>
           <li class="nav-item ">
             <a class="nav-link" href="">
-              <i class="material-icons">location_ons</i>
-              <p>Hospital</p>
+              <i class="material-icons">local_hospital</i>
+              <p>Hospitals</p>
             </a>
           </li>
           <li class="nav-item ">
@@ -74,19 +75,7 @@
               <i class="material-icons">notifications</i>
               <p>Notifications</p>
             </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="">
-              <i class="material-icons">language</i>
-              <p>RTL Support</p>
-            </a>
-          </li>
-          <li class="nav-item active-pro ">
-            <a class="nav-link" href="">
-              <i class="material-icons">unarchive</i>
-              <p>Upgrade to PRO</p>
-            </a>
-          </li>
+
         </ul>
       </div>
     </div>
@@ -95,7 +84,7 @@
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-            <a class="navbar-brand" href="javascript:;">User Profile</a>
+            <a class="navbar-brand" href="javascript:;">Admin</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
@@ -157,6 +146,9 @@
         </div>
       </nav>
       <!-- End Navbar -->
+      {% block body_content %}
+
+      {% endblock %}
 
 
     </div>
